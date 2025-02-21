@@ -1,0 +1,12 @@
+{
+  "name": "big-data-visualizer",
+  "version": "1.0.0",
+  "description": "Big Data Visualization Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC"
+}

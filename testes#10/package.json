@@ -1,0 +1,23 @@
+{
+  "name": "hr-assessment-system",
+  "version": "1.0.0",
+  "description": "HR Candidate Assessment System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.8",
+    "sqlite3": "^5.1.6",
+    "sweetalert2": "^11.7.32"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0"
+  },
+  "keywords": []
+}

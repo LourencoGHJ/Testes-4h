@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Rajdhani', sans-serif;
+    color: #00fff2;
+    overflow: hidden;
+}
+
+#main-interface {
+    background: radial-gradient(circle at center, rgba(0,20,30,0.9) 0%, rgba(0,0,0,1) 100%);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, rgba(0,255,242,0.1) 0%, transparent 100%);
+    padding: 15px 30px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    -webkit-app-region: drag;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,255,242,0.2);
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 80px);
+}
+
+.sidebar {
+    background: rgba(0,255,242,0.05);
+    border-right: 1px solid rgba(0,255,242,0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.system-status {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,255,242,0.3);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,255,242,0.1);
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,255,242,0.1);
+}
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.online {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0,255,0,0.5);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.command-center {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    border-top: 1px solid rgba(0,255,242,0.3);
+    padding: 20px;
+}
+
+.command-history {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0,255,242,0.9);
+}
+
+.command-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.command-input::before {
+    content: ">";
+    color: #00fff2;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.command-input input {
+    flex: 1;
+    background: rgba(0,255,242,0.05);
+    border: 1px solid rgba(0,255,242,0.3);
+    padding: 10px 15px;
+    color: #00fff2;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.command-input input:focus {
+    border-color: rgba(0,255,242,0.8);
+    box-shadow: 0 0 15px rgba(0,255,242,0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,255,242,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,255,242,0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,255,242,0.5);
+}
+
+/* Animation for new command entries */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.command-history div {
+    animation: fadeIn 0.3s ease;
+}

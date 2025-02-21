@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Data Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Dashboard Controls</h2>
+            <button onclick="loadData()">Load Data</button>
+            <div class="dataset-selector">
+                <select id="datasetSelect">
+                    <option value="dataset1">Dataset 1</option>
+                    <option value="dataset2">Dataset 2</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-grid">
+                <div class="chart-container">
+                    <canvas id="chart1"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div id="chart2"></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart3"></canvas>
+                </div>
+                <div class="data-insights">
+                    <h3>Real-time Insights</h3>
+                    <div id="insights"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>

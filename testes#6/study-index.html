@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Assistant</title>
+    <link rel="stylesheet" href="study-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="study-body">
+    <div class="study-container">
+        <nav class="study-nav">
+            <div class="study-nav-header">
+                <div class="study-logo">
+                    <span class="study-logo-icon">📚</span>
+                    <span class="study-logo-text">Study Assistant</span>
+                </div>
+            </div>
+
+            <ul class="study-menu">
+                <li data-page="dashboard" class="study-active">
+                    <div class="study-menu-item">
+                        <span class="study-icon">📊</span>
+                        <span class="study-label">Dashboard</span>
+                    </div>
+                </li>
+                <li data-page="flashcards">
+                    <div class="study-menu-item">
+                        <span class="study-icon">🎴</span>
+                        <span class="study-label">Flashcards</span>
+                    </div>
+                </li>
+                <li data-page="pomodoro">
+                    <div class="study-menu-item">
+                        <span class="study-icon">⏱️</span>
+                        <span class="study-label">Pomodoro</span>
+                    </div>
+                </li>
+                <li data-page="notes">
+                    <div class="study-menu-item">
+                        <span class="study-icon">📝</span>
+                        <span class="study-label">Notas</span>
+                    </div>
+                </li>
+                <li data-page="tasks">
+                    <div class="study-menu-item">
+                        <span class="study-icon">✅</span>
+                        <span class="study-label">Tarefas</span>
+                    </div>
+                </li>
+                <li data-page="stats">
+                    <div class="study-menu-item">
+                        <span class="study-icon">📈</span>
+                        <span class="study-label">Estatísticas</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="study-nav-footer">
+                <button class="study-theme-toggle">
+                    <span class="study-icon">🌓</span>
+                </button>
+                <button class="study-nav-toggle">
+                    <span class="study-icon">◀</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="study-main">
+            <div class="study-content-wrapper">
+                <div class="study-dashboard-grid">
+                    <div class="study-card">
+                        <div class="study-card-icon">⏰</div>
+                        <h3>Tempo de Estudo</h3>
+                        <div class="timer">00:00:00</div>
+                    </div>
+                    <div class="study-card">
+                        <div class="study-card-icon">🎯</div>
+                        <h3>Pomodoros Hoje</h3>
+                        <div class="count">0</div>
+                    </div>
+                    <div class="study-card">
+                        <div class="study-card-icon">📋</div>
+                        <h3>Tarefas Pendentes</h3>
+                        <div class="count">0</div>
+                    </div>
+                </div>
+                <div class="study-charts">
+                    <canvas id="study-progress-chart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="study-app.js"></script>
+</body>
+</html>

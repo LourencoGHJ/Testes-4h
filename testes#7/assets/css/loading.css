@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Rajdhani', sans-serif;
+    color: #00fff2;
+    overflow: hidden;
+}
+
+#loading {
+    background: radial-gradient(circle at center, rgba(0,20,30,0.9) 0%, rgba(0,0,0,1) 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.startup-sequence {
+    position: absolute;
+    top: 50px;
+    text-align: center;
+}
+
+.sequence-text {
+    font-size: 32px;
+    letter-spacing: 8px;
+    animation: fadeIn 2s;
+}
+
+.sequence-line {
+    width: 0;
+    height: 2px;
+    background: #00fff2;
+    margin: 10px auto;
+    animation: lineGrow 2s forwards;
+}
+
+.arc-reactor {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 50px 0;
+}
+
+.reactor-rings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #00fff2;
+}
+
+.ring1 {
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.ring2 {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    animation: rotate 8s linear infinite reverse;
+}
+
+.ring3 {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    animation: rotate 6s linear infinite;
+}
+
+.circle-outer {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    background: radial-gradient(circle, #00fff2 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.circle-inner {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    background: #000;
+    border-radius: 50%;
+    border: 2px solid #00fff2;
+}
+
+.circle-core {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    background: #00fff2;
+    border-radius: 50%;
+    animation: glow 2s infinite;
+}
+
+.core-lines span {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #00fff2;
+    left: 50%;
+    top: 0;
+    transform-origin: center;
+}
+
+.core-lines span:nth-child(1) { transform: rotate(0deg); }
+.core-lines span:nth-child(2) { transform: rotate(60deg); }
+.core-lines span:nth-child(3) { transform: rotate(120deg); }
+.core-lines span:nth-child(4) { transform: rotate(180deg); }
+.core-lines span:nth-child(5) { transform: rotate(240deg); }
+.core-lines span:nth-child(6) { transform: rotate(300deg); }
+
+.loading-interface {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.loading-text {
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00fff2;
+}
+
+.progress-wrapper {
+    position: relative;
+    margin: 30px 0;
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 255, 242, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, transparent, #00fff2, transparent);
+    box-shadow: 0 0 20px #00fff2;
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    position: absolute;
+    right: -40px;
+    top: -10px;
+    font-size: 16px;
+}
+
+.loading-details {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.detail-item {
+    margin: 5px 0;
+}
+
+.hex-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hex {
+    position: absolute;
+    width: 100px;
+    height: 115px;
+    background: linear-gradient(120deg, #00fff2 0%, transparent 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hexFade 3s infinite alternate;
+}
+
+.hex:nth-child(1) { top: 20%; left: 20%; }
+.hex:nth-child(2) { top: 40%; left: 60%; }
+.hex:nth-child(3) { top: 70%; left: 30%; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px #00fff2; }
+    50% { box-shadow: 0 0 40px #00fff2; }
+    100% { box-shadow: 0 0 20px #00fff2; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes hexFade {
+    from { opacity: 0.05; }
+    to { opacity: 0.2; }
+}
